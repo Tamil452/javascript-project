@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" name="inp" id="inp">
+    </div>
+    <div>
+        <button onclick="clr()">AC</button>
+        <button onclick="del()">DE</button>
+        <button onclick="display(event)">.</button>
+        <button onclick="div()">/</button>
+    </div>
+    <div>
+        <button onclick="display(event)">7</button>
+        <button onclick="display(event)">8</button>
+        <button onclick="display(event)">9</button>
+        <button onclick="mul()">*</button>
+    </div>
+    <div>
+        <button onclick="display(event)">4</button>
+        <button onclick="display(event)">5</button>
+        <button onclick="display(event)">6</button>
+        <button onclick="minus()">-</button>
+    </div>
+    <div>
+        <button onclick="display(event)">1</button>
+        <button onclick="display(event)">2</button>
+        <button onclick="display(event)">3</button>
+        <button onclick="getopr(event)">+</button>
+    </div>
+    <div>
+        <button onclick="display(event)">00</button>
+        <button onclick="display(event)">0</button>
+        <button onclick="e()">=</button>
+    </div>
+</body>
+<script>
+    let text = document.getElementById("inp")
+    cpy = ""
+    function display(event){
+        text.value += event.target.innerHTML
+        console.log(text.value)
+        }
+    function tonum(x){
+          cpy += Number(x)
+          console.log(cpy)
+    }
+    function getopr(event){
+        tonum(text.value)
+        opr = event.target.innerHTML
+        cpy += opr
+        console.log(cpy)
+        text.value = ''
+    }
+    function e(){
+        tonum(text.value)
+        text.value = eval(cpy)
+    }
+</script>
+</html>
